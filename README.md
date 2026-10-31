@@ -1,6 +1,6 @@
 # Novalie
 
-*By [Abdallah Alramahi](#author), who is looking for a job opportunity.*
+*By [Abdallah Alramahi](#author).*
 
 **The first miniature AGI: version 1.0.** A small general learner that is told nothing about the world it lives in.
 It sees symbols, chooses acts, and finds the laws behind them by one rule of evidence: it believes a law only when
