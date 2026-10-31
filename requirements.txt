@@ -1,0 +1,6 @@
+# All optional: Novalie runs on the standard library alone, and reads more with these.
+# Install them beside it (python -m pip install --target novalie_libs -r requirements.txt) or in your Python.
+numpy          # reading any file
+pillow         # pictures
+imageio-ffmpeg # sound and video
+nvidia-cuda-nvrtc-cu12   # its programs for an NVIDIA graphics card (else its processor searches)

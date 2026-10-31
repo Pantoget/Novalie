@@ -1,0 +1,6 @@
+novalie_state/
+novalie_state_*/
+novalie_inbox/
+novalie_libs/
+__pycache__/
+*.pyc

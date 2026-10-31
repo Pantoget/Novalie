@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Novalie</title>
+<meta name="author" content="Abdallah Alramahi, Abdallah1999alramahi@gmail.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236ea8ff'/%3E%3Cstop offset='1' stop-color='%23b07bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='20' r='16' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Ccircle cx='20' cy='20' r='5' fill='url(%23g)'/%3E%3Ccircle cx='8' cy='14' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ui/style.css">
+<script>
+  try {
+    var th = localStorage.getItem("novalie.theme");   // your choice, else your computer's light or dark
+    if (!th && window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) th = "light";
+    if (th) document.documentElement.dataset.theme = th;
+  } catch (e) {}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea8ff"/><stop offset=".55" stop-color="#a681ff"/><stop offset="1" stop-color="#ff7ab8"/></linearGradient>
+    <linearGradient id="ug" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4d8dff"/><stop offset=".7" stop-color="#a681ff"/><stop offset="1" stop-color="#ff6b9a"/></linearGradient>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></symbol>
+    <symbol id="i-now" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="i-talk" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-read" viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></symbol>
+    <symbol id="i-events" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol>
+    <symbol id="i-growth" viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M7 15l4-4 3 3 5-6"/></symbol>
+    <symbol id="i-guide" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7v.5M12 17h.01"/></symbol>
+    <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.3"/></symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="i-resume" viewBox="0 0 24 24"><path d="M7 5l12 7-12 7z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></symbol>
+    <symbol id="i-full" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-focus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5h.01"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-skip" viewBox="0 0 24 24"><path d="M5 5l10 7-10 7z"/><path d="M19 5v14"/></symbol>
+    <symbol id="i-ear" viewBox="0 0 24 24"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-6 0"/><path d="M10 9a2 2 0 0 1 4 0"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></symbol>
+    <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v5"/></symbol>
+    <symbol id="i-unplug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v5M3 3l18 18"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5L20 18M8.5 16.5L20 6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-world" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M2.5 16c3 2.2 16.5-2.6 19-8.5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M4 20h16"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3.2l1.8-2.6h6l1.8 2.6H20v11H4z"/><circle cx="12" cy="13.2" r="3.4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-6z"/><path d="M11 14l9-10"/></symbol>
+  </g>
+</svg>
+
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="5.2 2.2" opacity=".75"/>
+        <path d="M20 9a11 11 0 1 1-10.6 8" fill="none" stroke="url(#lg)" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.6" fill="url(#lg)"/>
+        <circle cx="9.4" cy="17" r="2.3" fill="#fff"/>
+      </svg>
+      <div class="brand-name"><b data-t="appName"></b><small data-t="tagline"></small></div>
+      <span class="pill" id="live"><i class="dot"></i><span class="lbl" data-t="live"></span><span class="sep">·</span><b id="sps" class="num">0</b><span class="lbl" data-t="sps"></span></span>
+      <span class="pill think hidden" id="thinkPill" data-t-title="thinkPillTip"><svg><use href="#i-spark"/></svg><b id="wsPace" class="num">0</b><span class="lbl" data-t="thinkPill"></span><span class="sep">·</span><b id="cardRate" class="num">0</b><span class="lbl" data-t="cardPill"></span></span>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="actions">
+      <div class="search">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" data-t-ph="search" data-t-title="search" aria-controls="results">
+        <kbd>/</kbd>
+        <div class="results hidden" id="results" role="listbox"></div>
+      </div>
+      <label class="worldsel" data-t-title="worldTip"><span data-t="worldLbl"></span><select id="worldSel" aria-label="World"></select></label>
+      <button class="btn icon" id="themeBtn" type="button" data-t-title="theme"><svg><use href="#i-moon"/></svg></button>
+      <button class="btn icon" id="pauseBtn" type="button" data-t-title="pause"><svg><use href="#i-pause"/></svg></button>
+      <button class="btn" id="quitBtn" type="button" data-t-title="quitTip"><svg><use href="#i-power"/></svg><span data-t="quit"></span></button>
+      <button class="btn danger" id="stopBtn" type="button" data-t-title="stopTip"><svg><use href="#i-trash"/></svg><span data-t="stop"></span></button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage" id="stage">
+      <canvas id="brain" role="img" data-t-aria="networkLabel"></canvas>
+      <div class="overlay chips" id="chips"></div>
+      <div class="overlay glass tools">
+        <button class="btn" id="fitBtn" type="button" data-t-title="fit"><svg><use href="#i-fit"/></svg></button>
+        <button class="btn on" id="labelBtn" type="button" data-t-title="labels"><svg><use href="#i-tag"/></svg></button>
+        <button class="btn on" id="motionBtn" type="button" data-t-title="motion"><svg><use href="#i-motion"/></svg></button>
+        <button class="btn on" id="solidBtn" type="button" data-t-title="solid"><svg><use href="#i-cube"/></svg></button>
+        <button class="btn" id="fullBtn" type="button" data-t-title="full"><svg><use href="#i-full"/></svg></button>
+        <button class="btn" id="shotBtn" type="button" data-t-title="shot"><svg><use href="#i-camera"/></svg></button>
+      </div>
+      <div class="overlay glass legend" id="legend">
+        <button id="legendBtn" type="button"><span data-t="legend"></span><svg><use href="#i-chev"/></svg></button>
+        <div class="body" id="legendBody"></div>
+      </div>
+      <div class="overlay glass strip" id="strip">
+        <div class="wtitle"><small data-t="world"></small><b id="wNum">—</b></div>
+        <canvas id="stripCanvas"></canvas>
+        <div class="wmeta"><span><b id="wSteps">0</b> <span data-t="steps"></span> · <b id="wStates">0</b> <span data-t="states"></span></span><span class="wread"><span data-t="nowReading"></span>: <b id="wRead">—</b></span></div>
+      </div>
+      <div class="overlay glass insp" id="insp" role="dialog" aria-modal="false"></div>
+      <div class="tip" id="tip" role="tooltip"></div>
+      <div class="overlay empty-stage hidden" id="emptyStage">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="url(#lg)" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="20" cy="20" r="3.4" fill="url(#lg)"/></svg>
+        <h2 data-t="emptyTitle"></h2>
+        <p data-t="emptyBody"></p>
+      </div>
+      <div class="overlay glass welcome hidden" id="welcome" role="dialog" aria-labelledby="welTitle">
+        <h2 id="welTitle" data-t="welTitle"></h2>
+        <ol>
+          <li><b data-t="wel1t"></b> <span data-t="wel1"></span></li>
+          <li><b data-t="wel2t"></b> <span data-t="wel2"></span></li>
+          <li><b data-t="wel3t"></b> <span data-t="wel3"></span></li>
+          <li><b data-t="wel4t"></b> <span data-t="wel4"></span></li>
+        </ol>
+        <div class="row"><button class="btn primary" id="welOk" type="button" data-t="welOk"></button></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="resizer" id="resizer" role="separator" aria-orientation="vertical" data-t-title="resizeT"></div>
+      <nav class="tabs" role="tablist">
+        <button class="tab on" type="button" role="tab" data-tab="now"><svg><use href="#i-now"/></svg><span data-t="tab_now"></span></button>
+        <button class="tab" type="button" role="tab" data-tab="talk"><svg><use href="#i-talk"/></svg><span data-t="tab_talk"></span><b class="badge hidden" id="talkBadge">0</b></button>
+        <button class="tab" type="button" role="tab" data-tab="reading"><svg><use href="#i-read"/></svg><span data-t="tab_reading"></span></button>
+        <button class="tab" type="button" role="tab" data-tab="events"><svg><use href="#i-events"/></svg><span data-t="tab_events"></span></button>
+        <button class="tab" type="button" role="tab" data-tab="growth"><svg><use href="#i-growth"/></svg><span data-t="tab_growth"></span></button>
+        <button class="tab" type="button" role="tab" data-tab="mind"><svg><use href="#i-spark"/></svg><span data-t="tab_mind"></span></button>
+        <button class="tab" type="button" role="tab" data-tab="guide"><svg><use href="#i-guide"/></svg><span data-t="tab_guide"></span></button>
+      </nav>
+      <div class="panes">
+        <div class="pane on" id="p-now" role="tabpanel">
+          <div class="card hidden" id="sinceCard"><h3><svg><use href="#i-growth"/></svg><span data-t="sinceT"></span><span class="r num" id="sinceN"></span></h3><p class="hint" data-t="sinceHint"></p><div id="sinceView"></div></div>
+          <div class="card story"><h3><svg><use href="#i-spark"/></svg><span data-t="storyT"></span></h3><p id="story"></p></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="discT"></span></h3><div class="disc" id="disc"></div></div>
+          <div class="card">
+            <h3><svg><use href="#i-power"/></svg><span data-t="controls"></span></h3>
+            <div class="switch"><div><b data-t="learnCtl"></b><small id="learnSub"></small></div><button class="tog" id="learnTog" type="button" role="switch" aria-checked="true"></button></div>
+            <div class="switch"><div><b data-t="internet"></b><small id="netSub"></small></div><button class="tog" id="netTog" type="button" role="switch" aria-checked="true"></button></div>
+            <div class="switch"><div><b data-t="paceCtl"></b><small id="paceSub"></small></div><button class="tog" id="paceTog" type="button" role="switch" aria-checked="false"></button></div>
+            <p class="hint" id="memLine" style="margin-top:6px"></p>
+          </div>
+          <div class="card">
+            <h3><svg><use href="#i-cpu"/></svg><span data-t="brainsT"></span><span class="r num" id="brainsN"></span></h3>
+            <p class="hint" data-t="brainsHint"></p>
+            <div class="brains" id="brains"></div>
+          </div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="goalT"></span></h3><div id="goalList"></div></div>
+          <div class="card"><h3><svg><use href="#i-spark"/></svg><span data-t="whyT"></span></h3><div id="whyList"></div></div>
+          <div class="card">
+            <h3><svg><use href="#i-world"/></svg><span data-t="nowWorld"></span><span class="r num" id="nowWorldNum"></span></h3>
+            <div class="sensors" id="sensors"></div>
+          </div>
+          <div class="card">
+            <h3><svg><use href="#i-check"/></svg><span data-t="recentWorlds"></span></h3>
+            <div class="wlist" id="worlds"></div>
+          </div>
+          <div class="card">
+            <h3><svg><use href="#i-read"/></svg><span data-t="nowReading"></span></h3>
+            <div class="readnow"><div class="src" id="rnSrc">·</div><div class="t"><b id="rnTitle">—</b><small id="rnFrom"></small></div></div>
+            <div class="shimmer hidden" id="rnShim"></div>
+          </div>
+          <div class="card">
+            <h3><svg><use href="#i-talk"/></svg><span data-t="urge"></span></h3>
+            <div class="gauge">
+              <svg viewBox="0 0 128 74" aria-hidden="true">
+                <path d="M14 64 A50 50 0 0 1 114 64" fill="none" stroke="var(--line-2)" stroke-width="10" stroke-linecap="round"/>
+                <path id="urgeArc" d="M14 64 A50 50 0 0 1 114 64" fill="none" stroke="url(#ug)" stroke-width="10" stroke-linecap="round" style="transition: stroke-dashoffset .8s cubic-bezier(.2,.9,.3,1)"/>
+                <path d="M90.2 31.2 L100.1 18.6" stroke="var(--text)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <text id="urgeVal" x="64" y="60" text-anchor="middle" fill="var(--text)" font-size="17" font-weight="700">0.00</text>
+              </svg>
+              <p class="hint" data-t="urgeHint"></p>
+            </div>
+          </div>
+          <div class="card">
+            <h3><svg><use href="#i-growth"/></svg><span data-t="thinking"></span></h3>
+            <div class="minis">
+              <div class="mini"><small data-t="sps"></small><b id="mSps">0</b></div>
+              <div class="mini"><small data-t="k_senses"></small><b id="mWorlds">0</b></div>
+              <div class="mini"><small data-t="age"></small><b id="mAge">—</b></div>
+            </div>
+          </div>
+          <div class="card"><h3><svg><use href="#i-plug"/></svg><span data-t="sitesRound"></span></h3><div id="sites"></div></div>
+          <div class="card"><h3><svg><use href="#i-question"/></svg><span data-t="waiting"></span></h3><div class="wchips" id="waiting"></div></div>
+          <div class="card"><h3><svg><use href="#i-read"/></svg><span data-t="nextT"></span></h3><div class="sect" data-t="nextArticles"></div><div class="wchips" id="nextArticles"></div><div class="sect" data-t="nextSites"></div><div class="wchips" id="nextSites"></div></div>
+        </div>
+
+        <div class="pane talkpane" id="p-talk" role="tabpanel">
+          <p class="hint talkhint" data-t="talkHint"></p>
+          <div class="wantnames hidden" id="wantNames"><span data-t="wantT"></span><div class="wn" id="wantList"></div></div>
+          <div class="msgs" id="msgs" aria-live="polite"></div>
+          <div class="typing hidden" id="typing"><i></i><i></i><i></i><span data-t="typing"></span></div>
+          <form class="compose" id="compose" autocomplete="off">
+            <input id="sayIn" data-t-ph="say" data-t-title="say" maxlength="2000">
+            <button class="btn primary" type="submit"><svg><use href="#i-send"/></svg><span data-t="send"></span></button>
+          </form>
+        </div>
+
+        <div class="pane" id="p-reading" role="tabpanel">
+          <div class="card">
+            <h3><svg><use href="#i-upload"/></svg><span data-t="give"></span></h3>
+            <div class="dropzone" id="dz" tabindex="0" role="button"><svg><use href="#i-upload"/></svg><span data-t="dropHint"></span></div>
+            <p class="hint" style="margin-top:9px" data-t="folderHint"></p>
+            <div class="path">
+              <code id="inboxPath">—</code>
+              <button class="btn small" id="copyPath" type="button"><svg><use href="#i-copy"/></svg><span data-t="copy"></span></button>
+              <button class="btn small" id="openFolder" type="button"><svg><use href="#i-folder"/></svg><span data-t="openFolder"></span></button>
+            </div>
+            <p class="hint" id="inboxCount" style="margin-top:6px"></p>
+          </div>
+          <div class="card"><h3><svg><use href="#i-doc"/></svg><span data-t="lastRead"></span><span class="r" id="lastAt"></span></h3><div id="lastRead"></div></div>
+          <div class="card"><h3><svg><use href="#i-cpu"/></svg><span data-t="tries"></span></h3><div class="tries" id="tries"></div></div>
+          <div class="card"><h3><svg><use href="#i-file"/></svg><span data-t="recentRead"></span></h3><div class="rlist" id="readHist"></div></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="ways"></span><span class="r num" id="waysN"></span></h3><table class="ways" id="ways"></table></div>
+          <div class="card"><h3><svg><use href="#i-link"/></svg><span data-t="asksT"></span><span class="r num" id="asksN"></span></h3><p class="hint" data-t="asksHint"></p><div class="asks" id="asks"></div></div>
+          <div class="card"><h3><svg><use href="#i-spark"/></svg><span data-t="typesNamed"></span><span class="r num" id="typesN"></span></h3><div class="tags" id="types"></div></div>
+          <div class="card"><h3><svg><use href="#i-link"/></svg><span data-t="piecesKeep"></span></h3><div class="cloud" id="pieces"></div><p class="hint" style="margin-top:9px"><span data-t="openQ"></span>: <b id="openN" class="num">0</b></p></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="grammarT"></span><span class="r num" id="grammarN"></span></h3><div id="grammar"></div></div>
+        </div>
+
+        <div class="pane" id="p-events" role="tabpanel">
+          <div class="card rhythm"><h3><svg><use href="#i-growth"/></svg><span data-t="rhythmT"></span><span class="r" data-t="rhythmR"></span></h3><svg id="rhythm" aria-hidden="true"></svg><div class="rkeys" id="rkeys"></div></div>
+          <div class="filters" id="filters"></div>
+          <div class="feed" id="feed"></div>
+        </div>
+
+        <div class="pane" id="p-growth" role="tabpanel">
+          <div class="card"><h3><svg><use href="#i-spark"/></svg><span data-t="mindT"></span></h3><div class="mind"><svg id="donut" viewBox="0 0 120 120" aria-hidden="true"></svg><div class="mindlist" id="mindList"></div></div></div>
+          <div class="card"><h3><svg><use href="#i-cpu"/></svg><span data-t="useT"></span></h3><div id="brainUse"></div></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="waysT"></span></h3><div id="itsWays"></div></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="knowsT"></span><span class="r num" id="knowsN"></span><a class="iconlink" id="knowsCsv" href="/knowledge.csv" download data-t-title="knowsCsv"><svg><use href="#i-download"/></svg></a></h3><div class="links" id="knows"></div><p class="hint" style="margin-top:8px" data-t="knowsHint"></p></div>
+          <div class="card"><h3><svg><use href="#i-link"/></svg><span data-t="pairsT"></span><span class="r num" id="pairsN"></span></h3><div class="links" id="pairs"></div></div>
+          <div class="seg" id="spanSel" role="group"><button type="button" class="on" data-span="2h" data-t="span2h"></button><button type="button" data-span="day" data-t="spanDay"></button></div>
+          <p class="hint" data-t="growthHint" style="margin-bottom:6px"></p>
+          <a class="btn small dl" id="histCsv" href="/history.csv" download data-t-title="histCsvTip"><svg><use href="#i-download"/></svg><span data-t="histCsv"></span></a>
+          <div class="charts" id="charts"></div>
+        </div>
+
+        <div class="pane" id="p-mind" role="tabpanel">
+          <div class="card hidden" id="abilityCard"><h3><svg><use href="#i-spark"/></svg><span data-t="abilityT"></span></h3><p class="hint" data-t="abilityHint"></p><div id="abilityView"></div></div>
+          <div class="card hidden" id="oneCard"><h3><svg><use href="#i-key"/></svg><span data-t="oneT"></span></h3><p class="hint" data-t="oneHint"></p><div id="oneView"></div></div>
+          <div class="card"><h3><svg><use href="#i-eye"/></svg><span data-t="selfT"></span><span class="r num" id="selfN"></span></h3><p class="hint" data-t="selfHint"></p><div id="selfView"></div></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="labT"></span><span class="r num" id="labN"></span></h3><p class="hint" data-t="labHint"></p><div id="labView"></div></div>
+          <div class="card"><h3><svg><use href="#i-spark"/></svg><span data-t="thinkT"></span></h3><p class="hint" data-t="thinkHint"></p><div id="thinkNow"></div></div>
+          <div class="card"><h3><svg><use href="#i-world"/></svg><span data-t="wsT"></span><span class="r num" id="wsN"></span></h3><p class="hint" data-t="wsHint"></p><div id="workshop"></div></div>
+          <div class="card"><h3><svg><use href="#i-cpu"/></svg><span data-t="gpuT"></span></h3><p class="hint" data-t="gpuHint"></p><div id="gpuUse"></div></div>
+          <div class="card"><h3><svg><use href="#i-growth"/></svg><span data-t="spaceT"></span><span class="r num" id="spaceN"></span></h3><p class="hint" data-t="spaceHint"></p><canvas id="spaceCanvas" width="640" height="320" aria-hidden="true"></canvas><div class="dials" id="spaceDials"></div></div>
+          <div class="card"><h3><svg><use href="#i-key"/></svg><span data-t="innateT"></span></h3><p class="hint" data-t="innateHint"></p><div class="innate" id="innate"></div></div>
+          <div class="card"><h3><svg><use href="#i-link"/></svg><span data-t="madeT"></span><span class="r num" id="madeN"></span></h3><p class="hint" data-t="madeHint"></p><div id="madeSenses"></div></div>
+        </div>
+
+        <div class="pane guide" id="p-guide" role="tabpanel"></div>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<div class="drop hidden" id="drop">
+  <div><svg><use href="#i-upload"/></svg><h2 data-t="dropTitle"></h2><p data-t="dropSub"></p></div>
+</div>
+
+<div class="modal hidden" id="stopModal" role="dialog" aria-modal="true" aria-labelledby="stopTitle">
+  <div class="dialog">
+    <div class="warnico"><svg><use href="#i-warn"/></svg></div>
+    <h2 id="stopTitle" data-t="stopTitle"></h2>
+    <p data-t="stopBody"></p>
+    <p class="hint" data-t="stopNote"></p>
+    <div class="row">
+      <button class="btn" id="stopCancel" type="button" data-t="cancel"></button>
+      <button class="hold" id="holdBtn" type="button"><i></i><span data-t="hold"></span></button>
+    </div>
+  </div>
+</div>
+
+<div class="screen hidden" id="offline">
+  <div class="box">
+    <svg class="big" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="5.2 2.2" opacity=".6"/><circle cx="20" cy="20" r="3.6" fill="url(#lg)"/></svg>
+    <h1 data-t="offTitle"></h1>
+    <p data-t="offBody"></p>
+    <div class="spin"></div>
+    <p class="hint" data-t="reconnecting" style="margin-top:8px"></p>
+  </div>
+</div>
+
+<div class="modal hidden" id="quitModal" role="dialog" aria-modal="true" aria-labelledby="quitTitle">
+  <div class="dialog">
+    <div class="warnico ok"><svg><use href="#i-save"/></svg></div>
+    <h2 id="quitTitle" data-t="quitTitle"></h2>
+    <p data-t="quitBody"></p>
+    <div class="row">
+      <button class="btn" id="quitCancel" type="button" data-t="cancel"></button>
+      <button class="btn primary" id="quitYes" type="button"><svg><use href="#i-power"/></svg><span data-t="quitYes"></span></button>
+    </div>
+  </div>
+</div>
+
+<div class="screen hidden" id="quitted">
+  <div class="box">
+    <svg class="big" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="url(#lg)" stroke-width="2" stroke-dasharray="2 3"/><circle cx="20" cy="20" r="3.6" fill="url(#lg)"/></svg>
+    <h1 data-t="quittedTitle"></h1>
+    <p data-t="quittedBody"></p>
+  </div>
+</div>
+
+<div class="screen hidden" id="erased">
+  <div class="box">
+    <svg class="big" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="var(--dim)" stroke-width="2" stroke-dasharray="2 3"/></svg>
+    <h1 data-t="erasedTitle"></h1>
+    <p data-t="erasedBody"></p>
+    <p class="hint" data-t="erasedBack"></p>
+  </div>
+</div>
+
+<form class="glass namepop hidden" id="namePop" autocomplete="off">
+  <h4><span data-t="nameTitle"></span> <bdi class="mono" id="nameSym"></bdi></h4>
+  <div class="namebox" style="margin-top:0">
+    <input id="nameIn" data-t-ph="nameHint" data-t-title="nameHint" maxlength="80">
+    <button class="btn primary small" type="submit" data-t="teach"></button>
+  </div>
+</form>
+
+<input type="file" id="fileIn" multiple hidden>
+
+<script src="/ui/i18n.js"></script>
+<script src="/ui/draw.js"></script>
+<script src="/ui/brain.js"></script>
+<script src="/ui/panels.js"></script>
+<script src="/ui/app.js"></script>
+</body>
+</html>
