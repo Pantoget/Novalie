@@ -1,4 +1,5 @@
 # Novalie. Copyright (c) 2026 Abdallah Alramahi <Abdallah1999alramahi@gmail.com>
+
 """A balance with two pans: it sees only which way it tips."""
 import random
 
